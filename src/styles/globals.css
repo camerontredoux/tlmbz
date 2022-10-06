@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+
+/* 
+#0B0C17 - dark
+#1D1D27 - light
+#262632 - light:hover
+#2E2F38 - lighter
+#44454E - lighter:hover
+#30303F - border
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.underline-fancy-green {
+  background: linear-gradient(
+      to right,
+      rgba(100, 200, 200, 0),
+      rgba(100, 200, 200, 0)
+    ),
+    linear-gradient(to right, rgba(134, 239, 172, 1), rgba(134, 239, 172, 1));
+  background-size: 100% 0.1em, 0 0.1em;
+  background-position: 100% 100%, 0 95%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+
+.underline-fancy-blue {
+  background: linear-gradient(
+      to right,
+      rgba(100, 200, 200, 0),
+      rgba(100, 200, 200, 0)
+    ),
+    linear-gradient(to right, rgba(125, 211, 252, 1), rgba(125, 211, 252, 1));
+  background-size: 100% 0.1em, 0 0.1em;
+  background-position: 100% 100%, 0 95%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+
+.underline-fancy:hover,
+.underline-fancy:focus {
+  background-size: 0 0.1em, 100% 0.1em;
+}
+
+@layer base {
+  body {
+    @apply bg-gradient-to-l from-[#0E0E0E] via-[#0B0C17] to-[#0E0E0E] font-inter text-white;
+  }
+}
+
+h1 {
+  @apply text-2xl font-bold;
+}
+
+h2 {
+  @apply text-xl font-medium;
+}
+
+h3 {
+  @apply text-lg font-normal;
+}
+
+@layer components {
+  .link-nav {
+    @apply rounded-md px-2 py-1 transition-colors duration-200 hover:bg-[#ffffff0f];
+  }
+
+  .btn-nav {
+    @apply border-[#30303F] bg-[#1D1D27] px-2 py-1 text-sm text-white transition-all duration-200 hover:bg-[#262632];
+  }
+}
+
+.hero-title {
+  @apply text-center text-5xl font-bold tracking-tight text-white sm:text-6xl sm:tracking-tight lg:text-[4rem] xl:text-[6rem] xl:tracking-tight 2xl:text-[6.5rem];
+}
+
+.hero-width {
+  @apply mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 md:max-w-3xl lg:max-w-4xl lg:px-0 xl:max-w-5xl 2xl:max-w-6xl;
+}
+
+.hero-padding {
+  @apply py-4 sm:py-8 md:py-12 lg:py-14 xl:py-12 2xl:py-28;
+}
+
+.avatar {
+  @apply rounded-full bg-white;
+}
+
+.title-gradient {
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
